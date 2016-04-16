@@ -3,4 +3,14 @@
   <groupId>info.sugengbin.learn</groupId>
   <artifactId>disconf</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+   <dependencies>
+		<!-- 
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+		 -->
+	</dependencies>
 </project>
