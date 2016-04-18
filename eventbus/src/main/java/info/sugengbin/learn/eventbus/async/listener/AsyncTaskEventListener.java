@@ -8,20 +8,14 @@
 */ 
 package info.sugengbin.learn.eventbus.async.listener;
 
-import info.sugengbin.learn.eventbus.Event;
 import info.sugengbin.learn.eventbus.EventListener;
 import info.sugengbin.learn.eventbus.async.EventBusAsync;
 import info.sugengbin.learn.eventbus.async.event.AsyncTaskEvent;
-import info.sugengbin.learn.eventbus.sync.EventBusSync;
-import info.sugengbin.learn.eventbus.sync.event.TaskEvent;
-
-import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Component;
 
 import com.google.common.eventbus.Subscribe;
 
