@@ -17,9 +17,9 @@ import org.apache.log4j.lf5.LogLevel;
  * @version
  * @since JDK 1.7
  */
-public class ReportClock {
+public class ClockUtils {
 
-	private static final Log log = LogFactory.getLog(ReportClock.class);
+	private static final Log log = LogFactory.getLog(ClockUtils.class);
 
 	protected Date first = null;
 	protected Date last = null;
@@ -36,7 +36,7 @@ public class ReportClock {
 	/**
 	 * 默认
 	 */
-	public ReportClock() {
+	public ClockUtils() {
 		this("Clock start at: " + MyDateUtils.now(), TIME_TYPE_SECONDS);
 	}
 
@@ -45,7 +45,7 @@ public class ReportClock {
 	 * @param msg
 	 * @param timeType
 	 */
-	public ReportClock(String msg, int timeType) {
+	public ClockUtils(String msg, int timeType) {
 		last = MyDateUtils.now();
 		cur = last;
 		first = last;// 初始化第一次
@@ -73,7 +73,7 @@ public class ReportClock {
 		String tmStr = "";
 		switch (timeType) {
 		case 0: // 毫秒
-			tmStr = (last.getTime() - cur.getTime()) + "毫秒";
+			tmStr = (cur.getTime() - last.getTime()) + "毫秒";
 			break;
 		case 1: // 秒
 			tmStr = MyDateUtils.getDiffMillisecond(last, cur) + "秒";

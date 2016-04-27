@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  * @version  
  * @since JDK 1.7
  */
-public class CumulativeClock extends ReportClock {
+public class CumulativeClock extends ClockUtils {
 
 	private String outputStr;
 

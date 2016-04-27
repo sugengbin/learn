@@ -10,9 +10,8 @@ package info.sugengbin.learn.log4j;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import info.sugengbin.learn.common.utils.ClockUtils;
 
 /**
  * ClassName:TestLog4j <br/>
@@ -25,18 +24,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @since JDK 1.7
  * @see
  */
-public class TestLog4j implements InitializingBean {
+public class TestLog4j {
 
 	private static final Log log = LogFactory.getLog(TestLog4j.class);
 
 	public static void main(String[] args) {
-		for (int i = 0; i < 10000; i++) {
+		ClockUtils clock = new ClockUtils("test", 0);
+		for (int i = 0; i < 100000; i++) {
 			log.info("this is log4j info log: " + i);
 		}
+		clock.clock("耗时：");
 	}
 
 	public void afterPropertiesSet() throws Exception {
-		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-beans.xml");
+//      log4j.xml文件不在根目录下的时候，需要进行加载注入
+//		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-beans.xml");
 	}
 
 }
