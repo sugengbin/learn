@@ -37,7 +37,7 @@ public class TestLog4j {
 	}
 
 	public void afterPropertiesSet() throws Exception {
-//      log4j.xml文件不在根目录下的时候，需要进行加载注入
+//      log4j.xml文件不在根目录下的时候，需要进行加载注入test
 //		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-beans.xml");
 	}
 
