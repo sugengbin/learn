@@ -2,9 +2,8 @@ package info.sugengbin.learn.common.utils;
 
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.log4j.lf5.LogLevel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -19,7 +18,7 @@ import org.apache.log4j.lf5.LogLevel;
  */
 public class ClockUtils {
 
-	private static final Log log = LogFactory.getLog(ClockUtils.class);
+	private static final Logger logger = LoggerFactory.getLogger(ClockUtils.class);
 
 	protected Date first = null;
 	protected Date last = null;
@@ -31,7 +30,7 @@ public class ClockUtils {
 	/** 时间类型 -- 分钟 **/
 	public static final int TIME_TYPE_MINUTES = 2;
 	protected int timeType; // 时间类型
-	protected LogLevel logLvl = LogLevel.INFO; // 默认log级别
+	protected String logLvl = "INFO"; // 默认log级别
 
 	/**
 	 * 默认
@@ -90,7 +89,7 @@ public class ClockUtils {
 	 * 
 	 * @param logLvl
 	 */
-	public void setLogLvl(LogLevel logLvl) {
+	public void setLogLvl(String logLvl) {
 		this.logLvl = logLvl;
 	}
 
@@ -100,12 +99,12 @@ public class ClockUtils {
 	 * @param msg
 	 */
 	protected void log(String msg) {
-		if (logLvl == LogLevel.INFO) {
-			log.info(msg);
-		} else if (logLvl == LogLevel.DEBUG) {
-			log.debug(msg);
-		} else if (logLvl == LogLevel.ERROR) {
-			log.error(msg);
+		if (logLvl.equals("INFO")) {
+			logger.info(msg);
+		} else if (logLvl.equals("DEBUG")) {
+			logger.debug(msg);
+		} else if (logLvl.equals("ERROR")) {
+			logger.error(msg);
 		}
 	}
 

@@ -8,8 +8,8 @@
  */
 package info.sugengbin.learn.log4j;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import info.sugengbin.learn.common.utils.ClockUtils;
 
@@ -26,14 +26,14 @@ import info.sugengbin.learn.common.utils.ClockUtils;
  */
 public class TestLog4j {
 
-	private static final Log log = LogFactory.getLog(TestLog4j.class);
+	private static final Logger logger = LoggerFactory.getLogger(TestLog4j.class);
 
 	public static void main(String[] args) {
 		ClockUtils clock = new ClockUtils("test", 0);
-		for (int i = 0; i < 100000; i++) {
-			log.info("this is log4j info log: " + i);
+		for (int i = 0; i < 300000; i++) {
+			logger.info("this is logtest info log: " + i);
 		}
-		clock.clock("耗时：");
+		clock.clock("耗时：");//29579毫秒
 	}
 
 	public void afterPropertiesSet() throws Exception {
