@@ -29,17 +29,14 @@ public class TestLog4j implements InitializingBean {
 
 	private static final Log log = LogFactory.getLog(TestLog4j.class);
 
-	
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-beans.xml");
 		for (int i = 0; i < 10000; i++) {
 			log.info("this is log4j info log: " + i);
 		}
 	}
 
-
 	public void afterPropertiesSet() throws Exception {
-		
+		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-beans.xml");
 	}
 
 }
