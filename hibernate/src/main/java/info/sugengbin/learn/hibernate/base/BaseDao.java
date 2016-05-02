@@ -1,4 +1,4 @@
-package info.sugengbin.learn.hibernate;
+package info.sugengbin.learn.hibernate.base;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,4 +1,4 @@
-package info.sugengbin.learn.hibernate;
+package info.sugengbin.learn.hibernate.base;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -9,7 +9,9 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class BaseEntityDao<T> extends BaseDao implements IEntityDao<T> {
 
 	// entityClass

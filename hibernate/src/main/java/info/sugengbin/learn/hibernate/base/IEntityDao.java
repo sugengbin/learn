@@ -1,4 +1,4 @@
-package info.sugengbin.learn.hibernate;
+package info.sugengbin.learn.hibernate.base;
 
 import java.util.Collection;
 import java.util.List;
