@@ -17,6 +17,7 @@ import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -62,5 +63,42 @@ public class EventBusTestCase {
 			log.error(e.getMessage());
 		}
 	}
+	
+	@Test
+	public void testBinary(){
+		Assert.assertEquals("110", setTrue("10", 3));
+		Assert.assertEquals("1", setTrue("1", 1));
+		Assert.assertEquals("111", setTrue("101", 2));
+		Assert.assertEquals("101", setTrue("001", 3));
+		Assert.assertEquals("100", setTrue("0", 3));
+		
+		Assert.assertEquals("10", setFalse("10", 3));
+		Assert.assertEquals("0", setFalse("1", 1));
+		Assert.assertEquals("101", setFalse("111", 2));
+		Assert.assertEquals("0", setFalse("100", 3));
+		Assert.assertEquals("100", setFalse("101", 1));
+		
+		Assert.assertFalse(isTrue("0", 1));
+		Assert.assertFalse(isTrue("0", 2));
+		Assert.assertTrue(isTrue("1", 1));
+		Assert.assertTrue(isTrue("10", 2));
+		Assert.assertTrue(isTrue("00010", 2));
+		Assert.assertTrue(isTrue("11001", 4));
+		
+	}
+	
+	public String setTrue(String input, int index){
+		int output = Integer.valueOf(input, 2) | (0x1 << (index - 1));
+		return Integer.toBinaryString(output);
+	}
+	
+	public String setFalse(String input, int index){
+		int output = Integer.valueOf(input, 2) & ~(0x1 << (index - 1));
+		return Integer.toBinaryString(output);
+	}
 
+	public boolean isTrue(String input, int index){
+		int temp = (0x1 << (index - 1));
+		return ((Integer.valueOf(input, 2) & temp) == temp);
+	}
 }
