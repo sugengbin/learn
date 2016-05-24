@@ -1,7 +1,17 @@
 package info.sugengbin.learn.common.security.base64;
 
 import java.util.Base64;
-
+/**
+ * 
+ * ClassName: Base64Utils <br/> 
+ * Function: TODO ADD FUNCTION. <br/> 
+ * Reason: TODO ADD REASON(可选). <br/> 
+ * date: 2016年5月3日 下午11:09:09 <br/> 
+ * 
+ * @author sugengbin 
+ * @version  
+ * @since JDK 1.7
+ */
 public class Base64Utils {
 
 	/**

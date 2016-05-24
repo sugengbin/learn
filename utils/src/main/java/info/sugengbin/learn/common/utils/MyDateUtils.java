@@ -15,13 +15,13 @@ import org.joda.time.Period;
 
 /**
  * 
- * ClassName: MyDateUtils <br/> 
- * Function: TODO ADD FUNCTION. <br/> 
- * Reason: TODO ADD REASON(可选). <br/> 
- * date: 2016年4月19日 上午12:00:37 <br/> 
+ * ClassName: MyDateUtils <br/>
+ * Function: TODO ADD FUNCTION. <br/>
+ * Reason: TODO ADD REASON(可选). <br/>
+ * date: 2016年4月19日 上午12:00:37 <br/>
  * 
- * @author sugengbin 
- * @version  
+ * @author sugengbin
+ * @version
  * @since JDK 1.7
  */
 public class MyDateUtils {
@@ -36,6 +36,8 @@ public class MyDateUtils {
 	public static final String FORMAT_PATTERN_MS = "mm:ss";
 	public static final String FORMAT_PATTERN_YYYYMMDD = "yyyyMMdd";
 	public static final String FORMAT_PATTERN_YMDHMSSSSS = "yyyyMMddHHmmssSSS";
+
+	private static final String INTERMEDIATE_LINE = "-";
 
 	/**
 	 * 忽略秒数，比较两个日期相隔的分钟 ,有正负
@@ -506,6 +508,25 @@ public class MyDateUtils {
 		return objectToDateStr(value, FORMAT_PATTERN_YMDHMS);
 	}
 
+	/**
+	 * 获取两个时间段区间 HH:mm-HH:mm
+	 * 
+	 * @param startDate
+	 * @param endDate
+	 * @return
+	 */
+	public static String datePeriod(Date startDate, Date endDate) {
+		checkNotNull(startDate);
+		checkNotNull(endDate);
+		String startDateStr = getDateStr(startDate, FORMAT_PATTERN_HM);
+		String endDateStr = getDateStr(endDate, FORMAT_PATTERN_HM);
+		return startDateStr + INTERMEDIATE_LINE + endDateStr;
+	}
+
+	/**
+	 * 检查对象是否为空
+	 * @param obj
+	 */
 	private static void checkNotNull(Object obj) {
 		if (obj == null) {
 			throw new IllegalArgumentException("Argument can't be null!");
