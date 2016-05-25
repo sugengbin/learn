@@ -37,7 +37,7 @@ public class MessageUtilsTestCase {
 	@Test
 	public void testMessage(){
 		Assert.assertEquals("你们", messageUtils.getMessage("test"));
-		Assert.assertEquals("你们", messageUtils.getMessage("test1", "哈哈"));
+		Assert.assertEquals("你们哈哈", messageUtils.getMessage("test1", "哈哈"));
 		Assert.assertEquals("哈哈", messageUtils.getMessageByDefault("test2", "哈哈"));
 	}
 }
