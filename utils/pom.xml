@@ -41,20 +41,20 @@
 			<version>1.9.2</version>
 		</dependency>
 
-		<!-- spring beans -->
+		<!-- spring -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<groupId>info.sugengbin.learn</groupId>
+			<artifactId>baseSpring</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- cglib-->
+		<!-- cglib -->
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>3.2.2</version>
 		</dependency>
-		
+
 		<!-- junit -->
 		<dependency>
 			<groupId>junit</groupId>
